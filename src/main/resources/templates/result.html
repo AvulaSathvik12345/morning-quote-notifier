@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="font-family: Georgia, serif; background:#fdf6ec; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0;">
+
+<div style="background:white; padding:40px; border-radius:14px; text-align:center;
+            box-shadow:0 10px 25px rgba(0,0,0,0.08); width:100%; max-width:350px; margin:20px;">
+
+    <h2 th:text="${message}" style="color:#c07a30;"></h2>
+
+    <a href="/" th:if="${!success}"
+       style="display:inline-block; margin-top:20px; text-decoration:none;
+              background:#c07a30; color:white; padding:10px 20px;
+              border-radius:8px;">
+        Try Again
+    </a>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Verify OTP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="font-family: Georgia, serif; background:#fdf6ec; display:flex; justify-content:center; align-items:center; min-height:100vh; margin:0;">
+
+<div style="background:white; padding:30px; border-radius:12px; width:100%; max-width:350px; margin:20px; text-align:center; box-shadow:0 8px 20px rgba(0,0,0,0.08);">
+
+    <h2>📩 Check your inbox</h2>
+    <p th:text="${message}" style="color:#666;"></p>
+
+    <form th:action="@{/verify}" method="post">
+        <input type="hidden" name="email" th:value="${email}"/>
+
+        <input type="text" name="otp" placeholder="Enter OTP"
+               maxlength="6" required
+               style="width:100%; padding:12px; margin:15px 0;
+                      border-radius:8px; border:1px solid #ddd;
+                      text-align:center; font-size:18px; letter-spacing:5px;">
+
+        <button type="submit"
+                style="width:100%; padding:12px; background:#c07a30; color:white;
+                       border:none; border-radius:8px; cursor:pointer;">
+            Verify
+        </button>
+    </form>
+</div>
+
+</body>
+</html>
