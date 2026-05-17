@@ -21,12 +21,6 @@ public class SubscriptionController {
     @Autowired
     DailyQuoteScheduler scheduler;
 
-    //test endpoint to trigger the scheduler manually
-    @GetMapping("/test/trigger")
-    public String trigger() {
-        scheduler.sendDailyQuotes();
-        return "redirect:/";
-    }
 
     @GetMapping("/")
     public String home(Model model) {
